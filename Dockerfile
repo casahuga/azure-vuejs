@@ -30,7 +30,6 @@ RUN apt-get update \
                  tcptraceroute \
                  vim \
                  wget \
-    && chmod 755 /bin/init_container.sh \
     && echo "root:Docker!" | chpasswd \
     && echo "cd /home" >> /etc/bash.bashrc \
     && ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so \
@@ -46,7 +45,6 @@ RUN   \
    && chmod 777 /var/log \
    && chmod 777 /var/run \
    && chmod 777 /var/lock \
-   && chmod 777 /bin/init_container.sh \
    && cp /bin/apache2.conf /etc/apache2/apache2.conf \
    && rm -rf /var/www/html \
    && rm -rf /var/log/apache2 \
